@@ -144,7 +144,23 @@ def test_2():
         my_map[key]=value
     print(my_map)
 
+def test_3():
+    my_map = Hashmap()
+    n = 30
+    for i in range (0, n):
+        key = f"cool{i}"
+        value = f"not that cool {i}"
+        my_map[key]=value
+    print(my_map)
+
+    for i in range (0, n):
+        key = f"cool{i}"
+        del my_map[key]
+        if n %10 == 0:
+            print(len(my_map.buckets))
+    print(my_map)
 
 if __name__ == "__main__":
-    test_1()
+    # test_1()
     # test_2()
+    test_3()
