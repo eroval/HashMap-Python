@@ -9,12 +9,10 @@ class Hashmap:
 
     def __increase_if_neccessary__(self):
         if len(self.buckets)<self.limit_size and (self.curr_size>=self.upper_threshold):
-            print("increasing size")
             self.__rehash__()
 
     def __decrease_if_neccessary__(self):
         if len(self.buckets)>8 and self.curr_size<=self.lower_threshold:
-            print("decreasing size")
             self.__rehash__(False)
 
     def __recalculate__ratio__(self, size):
@@ -54,7 +52,6 @@ class Hashmap:
 
     def __getitem__(self, key):
         index = self.__getindex__(key)
-        print(f"get index {index}")
         if self.buckets[index]:
             for i in range(len(self.buckets[index])):
                 if self.buckets[index][i][0]==key:
@@ -65,7 +62,6 @@ class Hashmap:
     def __setitem__(self, key, value):
         index = self.__getindex__(key)
 
-        print(index)
         if self.buckets[index] is None:
             self.buckets[index] = []
                     
@@ -140,13 +136,6 @@ if __name__ == "__main__":
     print(my_map)
     del my_map["cool"]["notcool"]
     print(my_map)
-    # my_map["2"]="3434"
-    # del my_map["cool"]
-    # print(my_map["cool"]["notcool"])
-    # coolest = {
-    #     "not that cool": 4,
-    #     "super cool":5,
-    #     "nEsdgsd":5
-    # }
-    # print(coolest)
+    del my_map["cool2"]
+    print(my_map)
 
