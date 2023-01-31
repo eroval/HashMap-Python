@@ -118,8 +118,7 @@ class Hashmap:
         return modified_string
 
 
-
-if __name__ == "__main__":
+def test_1():
     my_map = Hashmap()
     my_map["cool"]=Hashmap()
     my_map["cool"]["notcool"]=[]
@@ -137,3 +136,15 @@ if __name__ == "__main__":
     del my_map["cool2"]
     print(my_map)
 
+def test_2():
+    my_map = Hashmap()
+    for i in range (0, 1043):
+        key = f"cool{i}"
+        value = f"not that cool {i}"
+        my_map[key]=value
+    print(my_map)
+
+
+if __name__ == "__main__":
+    test_1()
+    # test_2()
