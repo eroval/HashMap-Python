@@ -19,7 +19,6 @@ class Hashmap:
         self.upper_threshold = size//self.ratio_resizer
         self.lower_threshold = size//2//self.ratio_resizer
 
-
     def __rehash__(self, increase=True):
         if increase:
             new_buckets = [None]*(len(self.buckets)*2)
@@ -74,7 +73,6 @@ class Hashmap:
         self.curr_size+=1
         self.__increase_if_neccessary__()
        
-
     def __delitem__(self, key):
         index = self.__getindex__(key)
         
