@@ -118,6 +118,7 @@ class Hashmap:
         return modified_string
 
 
+
 def test_1():
     my_map = Hashmap()
     my_map["cool"]=Hashmap()
@@ -159,6 +160,8 @@ def test_3():
         if n %10 == 0:
             print(len(my_map.buckets))
     print(my_map)
+
+
 
 if __name__ == "__main__":
     # test_1()
